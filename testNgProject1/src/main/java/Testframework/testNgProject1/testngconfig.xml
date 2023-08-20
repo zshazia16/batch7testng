@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="regression">
+	
+<test name="fbhome_restart Chrome browser">
+<parameter name="brow" value="Chrome"></parameter>	
+<classes>
+<class name="Testframework.testNgProject1.NewTestdp"></class>
+</classes>
+</test>
+<!-- 
+<test name="fbhome_restart Firefox browser">
+<parameter name="brow" value="Firefox"></parameter>	
+<classes>
+<class name="Testframework.testNgProject1.NewTest2"></class>
+</classes>
+</test>
+
+<test name="fbhome_restart Edge browser">
+<parameter name="brow" value="Edge"></parameter>	
+<classes>
+<class name="Testframework.testNgProject1.NewTest2"></class>
+</classes>
+</test>
+-->
+</suite>
+
