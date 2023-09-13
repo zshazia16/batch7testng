@@ -9,6 +9,16 @@ import org.testng.asserts.SoftAssert;
 
 public class HomePom3 {
 	public static WebDriver driver;
+	@FindBy (xpath = "//*[@id='twotabsearchtextbox']")
+	WebElement search_box;
+	@FindBy (xpath = "//*[@id='nav-search-submit-button']")
+	WebElement search_button;
+	@FindBy (xpath = "//*[@class='a-truncate-cut'][1]")
+	WebElement laptop;
+	@FindBy (xpath = "//*[@id='add-to-cart-button']")
+	WebElement Add_to_Cart;
+	
+	
 	@FindBy (xpath = "//*[text()='Back to School']")
 	WebElement backtoSchool;
 	
@@ -27,7 +37,20 @@ public class HomePom3 {
 	public HomePom3(WebDriver driver) {
 		HomePom3.driver=driver;
 		PageFactory.initElements(driver, this);
+		
 	}	
+	public void  search_fieldClick(){
+		search_box.sendKeys("laptop");	
+	}	
+	public void search_buttonClick(){
+		search_button.click();	
+	}	
+	public void laptopClick(){
+		laptop.click();	
+	}	
+	public void Add_to_CartClick(){
+		Add_to_Cart.click();	
+	}
 	public void backtoSchoolClick(){
 	backtoSchool.click();	
 	}
@@ -61,8 +84,10 @@ public void enterPass(String pass){
 	fb_PassField.sendKeys(pass);
 	
 }
+	
+}
 
 
 	
 
-}
+

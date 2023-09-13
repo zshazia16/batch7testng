@@ -17,13 +17,13 @@ import org.testng.annotations.Parameters;
 
 public class baseclass {
 	public  WebDriver driver;
-	 @BeforeMethod
+	 @BeforeMethod(alwaysRun=true)
 	 @Parameters({"brow"})
 	 public void beforeMethod(String brow) throws InterruptedException, IOException {
 	 System.out.println("This is before test,we will open browser here");
 	 String browser=brow;
 	// String browser=("chrom");
-	 if(browser.contains("Chrom"))
+	 if(browser.contains("chrome"))
 	 {
 	System.setProperty("webdriver.chrome.driver", "C:\\Users\\Sherm\\eclipse-workspace\\mavenproject1\\drivers\\chromedriver.exe");
 	 driver = new ChromeDriver();    // Opening chrome broser
@@ -43,24 +43,24 @@ public class baseclass {
 	 Thread.sleep(5000);
 	
 	 }
-	 @AfterMethod
+	 @AfterMethod(alwaysRun=true)
 	 public void afterMethod() {
 	 System.out.println("This is our after test,we will close browser here");
 	 driver.close();	  
 	 }  
 	 public void shots() throws IOException {
 	File cap=  ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	FileHandler.copy(cap, new File("C:\\Users\\Sherm\\eclipse-workspace\\testNgProject1\\pictures\\1.png"));
+	FileHandler.copy(cap, new File("C:\\Users\\Sherm\\git\\repository1\\testNgProject1\\pictures\\1.png"));
 	 }
 	public void shots_withargs(String name) throws IOException {
 	File cap=  ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	FileHandler.copy(cap, new File("C:\\Users\\Sherm\\\\eclipse-workspace\\\\testNgProject1\\\\pictures\\\\\"+name_dt+\".png"));
+	FileHandler.copy(cap, new File("C:\\Users\\Sherm\\git\\repository1\\testNgProject1\\pictures\\"+name+".png"));
 	}
 	public void shots_withdate() throws IOException {
 		  Date dt = new Date(1);
 		String name_dt=  dt.toString().replace(" ", "_").replace(":", "_");
 	File cap=  ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	FileHandler.copy(cap, new File("C:\\Users\\Sherm\\eclipse-workspace\\testNgProject1\\pictures\\"+name_dt+".png"));
+	FileHandler.copy(cap, new File("C:\\Users\\Sherm\\git\\repository1\\testNictures\\"+name_dt+".png"));
 	}
 	
 	

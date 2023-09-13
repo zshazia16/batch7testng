@@ -1,88 +1,54 @@
 package Testframework.testNgProject1;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 public class homepom {
 private static final String HomePOM = null;
-
 public static WebDriver driver;
-	
-@FindBy (xpath = "//*[@data-quid='main-navigation-order-online']")
-WebElement order_online;
-
-@FindBy (xpath = "//*[@id='tab-Delivery']")
-WebElement delivery_type;
-
-@FindBy (xpath = "//*[@data-quid='address-type-select']")
-WebElement address_type;
-
-@FindBy (xpath = "//*[@data-quid='LocationName']")
-WebElement LocationName;
-
-@FindBy (xpath = "//*[@data-quid='Street']")
-WebElement Street ;
-
-@FindBy (xpath = "//*[@data-quid='UnitNumber']")
-WebElement UnitNumber ;
-
-@FindBy (xpath = "//*[@data-quid='PostalCode']")
-WebElement Postalcode ;
-
-@FindBy (xpath = "//*[@data-quid='City']")
-WebElement city ;
-
-@FindBy (xpath = "//*[@id='Region']")
-WebElement State;
-
-
+@FindBy (xpath = "//*[@class='MyAccount__label SimpleFlyout__link--bold'][1]")
+WebElement my_account ;
+@FindBy (xpath = "(//*[@class='bttn__content'])[3]")
+WebElement user_name ;
+@FindBy (xpath = "//*[@class='bttn__content'][1]")
+WebElement personal_account ;
+@FindBy (xpath = "//*[@id='email']") 
+WebElement email_address  ;
+@FindBy (xpath = "//*[@id='password-input-field']")
+WebElement password_field ;
+@FindBy (xpath = "//*[@id='zipCode']")
+WebElement zip_code;
+@FindBy (xpath = "//*[@name='phone']")
+WebElement phone_number ;
 public homepom (WebDriver driver) {
-	homepom.driver=driver;
-	PageFactory.initElements(driver, this);
+homepom.driver=driver;
+PageFactory.initElements(driver, this);
 }
-public void onlineorderClick() {
-	order_online.click();
+public void my_accountClick() {
+my_account.click();
 }
-
-public void deliveryfieldClick() {
-	delivery_type.click();
+public void user_nameClick() {
+user_name.click();
 }
-public void addresstypeClick(String string) {
-	Select ob = new Select(address_type);
-	 ob.selectByVisibleText("Apartment");
+public void personal_accountClick() {
+personal_account.click();
 }
-public void LocationName(String string) {
- LocationName.sendKeys("The field apartment");
-	
+public void email_address(String string) {
+email_address.sendKeys("abc@yahoo.com"); 
+	}
+public void password_field  (String string) {
+ password_field .sendKeys("12345");
 }
-public void Street(String string) {
- Street.sendKeys("Parcher Av"); 
-}
-public void UnitNumber(String string) {
-		UnitNumber.sendKeys("606"); 
-}		
-public void PostalcodeClick(String String) {
-	Postalcode.clear();
-	Postalcode.sendKeys("12345"); 
-}
-public void City(String String) {
-	city.clear();
-	 city.sendKeys("Chantilly"); 
-}
-public void State(String String) {
-	Select ob2 = new Select(State);
-	ob2.selectByVisibleText("AZ");
-	
-	
-}
-
-
+ public void zip_code  (String string) {
+ zip_code.sendKeys("20171"); 
+ }
+ public void phone_number(String string) {
+ phone_number.sendKeys("20171"); 
+ 
 }	
 
-	
+}
 
 
 	

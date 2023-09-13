@@ -29,10 +29,10 @@ public static WebDriver driver;
   @Test
  public void f() throws InterruptedException {  
  System.out.println("This is test1");	 
-// WebElement backtoschool = driver.findElement(By.xpath("//*[text()='Back to School']"));
- //backtoschool.click();
- HomePom3 ob = new HomePom3(driver);
- ob.backtoSchoolClick();
+ WebElement backtoschool = driver.findElement(By.xpath("//*[text()='Back to School']"));
+ backtoschool.click();
+// HomePom3 ob = new HomePom3(driver);
+ //ob.backtoSchoolClick();
  Thread.sleep(5000);  
  // }
 //@Test
